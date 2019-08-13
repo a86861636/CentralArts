@@ -1,0 +1,15 @@
+/* 通用样式 */
+@font-face{
+     font-family: 'FZLTCHJW'; 
+     src: url('./FZLTCHJW.ttf');
+}
+
+/* *{
+	font-family: "FZLTCHJW";
+	color: yellow;
+} */
+/* 页面样式 */
+html{
+	font-size: 12px;
+}
+

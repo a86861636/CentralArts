@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<link href="../css/common.css" rel="stylesheet" type="text/css" /> 
+</head>
+<body>
+<container>
+	<img class="container-left" src="../img/registerBG.png"></img>
+	<div class="container-right flex-col">
+		<div class="form-box">
+			<div class="register">注册</div>
+			<div class="input-item">
+				<div>姓 名</div>
+				<input class="input-text">
+			</div>
+			<div class="input-item">
+				<div>手 机 号</div>
+				<input class="input-text">
+			</div>
+			<div class="input-item">
+				<div>密 码</div>
+				<input class="input-text">
+			</div>
+			<div class="input-item">
+				<div>再次确认</div>
+				<input class="input-text">
+			</div>
+			<div class="input-item">
+				<div>手机验证</div>
+				<div class="input-tel-box">
+					<input class="input-tel">
+					<div class="sendCode">发送验证码</div>
+				</div>
+			</div>
+			<div class="button-submit">创建账号</div>
+			<div class="flex-row">
+				<div class="checkBox"></div>
+				<div>我已阅读并接受</div>
+				<div>用户协议</div>
+			</div>
+		</div>
+	</div>
+</container>
+<footer>
+	<div class="footer-copyright">版权所有 2007-2019 中央美术学院 Copyright © 2007-2019 CAFA. All Rights Reserved.</div>
+</footer>
+</body>
+</html>
+<style>
+container{
+	display: flex;
+	flex-direction: row;
+	height: 100vh;
+}
+.container-left{
+	display: block;
+	max-width: 40%;
+}
+.container-right{
+	flex: 1;
+}
+.form-box{
+	margin: auto;
+}
+.register{
+	font-size: 1.6rem;
+	text-align: center;
+	color:rgba(0,0,63,1);
+}
+</style>
