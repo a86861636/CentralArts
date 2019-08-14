@@ -6,40 +6,21 @@
 <link href="../css/common.css" rel="stylesheet" type="text/css" /> 
 </head>
 <body>
+<img class="login-logo" src="../img/logo.png">
 <container>
-	<img class="container-left" src="../img/registerBG.png"></img>
 	<div class="container-right flex-col">
 		<div class="form-box">
-			<div class="register">注册</div>
+			<div class="login-tt">登录</div>
 			<div class="input-item">
-				<div>姓 名</div>
-				<input class="input-text">
-			</div>
-			<div class="input-item">
-				<div>手 机 号</div>
-				<input class="input-text">
+				<div class="input-label">手 机 号</div>
+				<input type="tel" class="input-text">
 			</div>
 			<div class="input-item">
-				<div>密 码</div>
-				<input class="input-text">
+				<div class="input-label">密 码</div>
+				<input type="password" class="input-text">
 			</div>
-			<div class="input-item">
-				<div>再次确认</div>
-				<input class="input-text">
-			</div>
-			<div class="input-item">
-				<div>手机验证</div>
-				<div class="input-tel-box">
-					<input class="input-tel">
-					<div class="sendCode">发送验证码</div>
-				</div>
-			</div>
-			<div class="button-submit">创建账号</div>
-			<div class="flex-row">
-				<div class="checkBox"></div>
-				<div>我已阅读并接受</div>
-				<div>用户协议</div>
-			</div>
+			<div class="button-login">登录</div>
+			<div class="button-switch">使用校园网账号登录</div>
 		</div>
 	</div>
 </container>
@@ -49,24 +30,58 @@
 </body>
 </html>
 <style>
+.login-logo{
+	position: absolute;
+	left: 1.7rem;
+	top: 1.6rem;
+	max-width: 4.6rem;
+}
 container{
 	display: flex;
 	flex-direction: row;
 	height: 100vh;
+	padding-bottom: 2.4rem;
 }
-.container-left{
-	display: block;
-	max-width: 40%;
+.login-tt{
+	font-size: 2.5rem;
+	text-align: center;
+	color:rgba(0,0,63,1);
+	margin-bottom: 7rem;
 }
 .container-right{
 	flex: 1;
 }
 .form-box{
+	max-width: 80%;
+	min-width: 35%;
+}
+.form-box{
 	margin: auto;
 }
-.register{
-	font-size: 1.6rem;
-	text-align: center;
+.input-label{
+	font-size: 1.3rem;
 	color:rgba(0,0,63,1);
+	margin: 1.8rem 0 0.6rem 0;
 }
+.input-text{
+	height: 2.7rem;
+	width: 100%;
+	border-color: #808080;
+	padding: 0 0.5em;
+}
+.button-login,.button-switch{
+	background-color:rgba(0,0,63,1);
+	color: white;
+	text-align: center;
+	height:2.7rem;
+	line-height:2.7rem;
+	font-size:1.4rem;
+	margin-top: 2.6rem;
+	cursor: pointer;
+}
+.button-switch{
+	margin-top: 1.6rem;
+	background-color: #112BDB;
+}
+
 </style>

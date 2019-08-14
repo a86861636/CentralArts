@@ -3,11 +3,14 @@
      font-family: 'FZLTCHJW'; 
      src: url('./FZLTCHJW.ttf');
 }
-
+*{
+	box-sizing: border-box;
+}
 *{
 	padding: 0;
 	margin: 0;
 }
+
 .flex-col{
 	display: flex;
 	flex-direction: column;
@@ -16,21 +19,43 @@
 	display: flex;
 	flex-direction: row;
 }
+.align-center{
+	align-items: center;
+}
+.align-start{
+	align-self: flex-start;
+}
+.align-end{
+	align-self: flex-end;
+}
+.flex-full{
+	flex: 1;
+}
 /* *{
 	font-family: "FZLTCHJW";
 	color: yellow;
 } */
 
 /* 页面样式 */
+body{
+	position:relative
+}
 html{
 	font-size: 12px;
 }
 header{
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 4rem;
 	display: block;
 	width: 100%;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	background: -moz-linear-gradient(left, rgb(0,255,255), rgb(3,50,224), rgb(255,125,218));
+	background: -webkit-linear-gradient(left, rgb(0,255,255), rgb(3,50,224), rgb(255,125,218));
+	background: -o-linear-gradient(left, rgb(0,255,255), rgb(3,50,224), rgb(255,125,218));
 }
 footer{
 	display: block;
@@ -42,6 +67,60 @@ footer{
 container{
 	display: block;
 	width: 100%;
+}
+/* 头部状态栏样式 */
+.header-icon{
+	height: 1.8rem;
+	margin-left: 1.7rem;
+}
+.change-language{
+	margin-left: 1.3rem;
+}
+.language{
+	font-size: 1.1rem;
+	padding: 0 0.2rem;
+	color: #8ADBEB;
+	cursor: pointer;
+}
+.language-active{
+	color: white;
+}
+.header-nav,.header-nav-active{
+	color: #9EADFE;
+	height: 2.4rem;
+	width: 6.2rem;
+	line-height: 2.4rem;
+	text-align: center;
+	cursor: pointer;
+}
+.header-nav-active{
+	color: #00FFFF;
+	border:#00FFFF solid 1px;
+	box-sizing: content-box;
+}
+.header-face{
+	width: 1.8rem;
+	height: 1.8rem;
+	margin-right: 3.5rem;
+}
+.toLogin{
+	margin-right: 3.5rem;
+	cursor: pointer;
+}
+.header-cancel{
+	width: 1rem;
+	height: 1rem;
+	cursor: pointer;
+	margin-right: 3.7rem;
+}
+.header-search{
+	width: 1.2rem;
+	height: 1.2rem;
+	margin-right: 1.4rem;
+}
+.toLogin{
+	font-size: 1.2rem;
+	color: white;
 }
 /* index.html */
 .header-left,.header-center,.header-right,.change-language{
@@ -60,6 +139,9 @@ container{
 	color: ##757575;
 	display: flex;
 	flex-direction: column;
+}
+.footer-left{
+	align-items: center;
 }
 .footer-right{
 	flex-direction: row;

@@ -8,29 +8,29 @@
 </head>  
 <body>  
 <header>
-	<div class="header-left">
-		<img class="header-icon"></img>
+	<div class="header-left align-center">
+		<img class="header-icon align-center" src="img/logo.png"></img>
 		<div class="change-language">
-			<div>中</div><div>EN</div>
+			<div class="language language-active">中</div><div class="language">EN</div>
 		</div>
 	</div>
-	<div class="header-center">
+	<div class="header-center align-center">
 		<div class="header-nav">策展案例</div>
 		<div class="header-nav">策展资源</div>
 		<div class="header-nav">关于我们</div>
-		<div class="header-nav">开始实验</div>
+		<div class="header-nav-active">开始实验</div>
 	</div>
-	<div class="header-right">
-		<img class="header-search"></img>
-		<img class="header-face"></img>
-		<div>登录</div>
-		<img class="header-cancel"></img>
+	<div class="header-right align-center">
+		<img class="header-search" src="img/search.png"></img>
+		<img class="header-face" src="img/face.png"></img>
+		<div class="toLogin">登录</div>
+		<img class="header-cancel" src="img/cancel.png"></img>
 		<img class="header-item"></img>
 	</div>
 </header>
-<content>
-	<div>
-		<img src="img/footer-gradual.png"></img>
+<container>
+	<div class="container-item1">
+		
 	</div>
 	<div>
 		<div class="notice-box">
@@ -53,27 +53,31 @@
 		<div></div>
 		<div></div>
 	</div>
-</content>
+</container>
 <footer>
 	<div class="footer-info">
 		<div class="footer-left">
-			<div class="footer-name">中央美术学院虚拟实验室</div>
-			<div class="footer-visit">预约参观</div>
-			<div class="footer-info-item">
-				<div class="footer-info-tt">地 址</div>
-				<div class="footer-info-ct">北京市朝阳区花家地南街8号中央美术学院北区14号楼F1</div>
-			</div>
-			<div class="footer-info-item">
-				<div class="footer-info-tt">邮政编码</div>
-				<div class="footer-info-ct">100102</div>
-			</div>
-			<div class="footer-info-item">
-				<div class="footer-info-tt">联系方式</div> 
-				<div class="footer-info-ct">+86（0）10-64771910</div> 
-			</div>
-			<div class="footer-info-item">
-				<div class="footer-info-tt">邮件地址</div>
-				<div class="footer-info-ct">vlam@cafa.edu.cn</div> 
+			<div class="footer-left-center">
+				<div class="footer-name">中央美术学院虚拟实验室</div>
+				<div class="footer-visit">
+					<img class="webLink" src="img/web.png"></img><img class="wechatLink" src="img/wechat.png"></img>
+				</div>
+				<div class="footer-info-item">
+					<div class="footer-info-tt">地 址</div>
+					<div class="footer-info-ct">北京市朝阳区花家地南街8号中央美术学院北区14号楼F1</div>
+				</div>
+				<div class="footer-info-item">
+					<div class="footer-info-tt">邮政编码</div>
+					<div class="footer-info-ct">100102</div>
+				</div>
+				<div class="footer-info-item">
+					<div class="footer-info-tt">联系方式</div> 
+					<div class="footer-info-ct">+86（0）10-64771910</div> 
+				</div>
+				<div class="footer-info-item">
+					<div class="footer-info-tt">邮件地址</div>
+					<div class="footer-info-ct">vlam@cafa.edu.cn</div> 
+				</div>
 			</div>
 		</div>
 		<div class="footer-right">
@@ -97,3 +101,81 @@
 </footer>
 </body>  
 </html>
+<style>
+body{
+	padding-bottom: 19rem;
+}
+.header-icon{
+	height: 1.8rem;
+	margin-left: 1.7rem;
+}
+.change-language{
+	margin-left: 1.3rem;
+}
+.language{
+	font-size: 1.1rem;
+	padding: 0 0.2rem;
+	color: #8ADBEB;
+	cursor: pointer;
+}
+.language-active{
+	color: white;
+}
+.header-nav,.header-nav-active{
+	color: #9EADFE;
+	height: 2.4rem;
+	width: 6.2rem;
+	line-height: 2.4rem;
+	text-align: center;
+	cursor: pointer;
+}
+.header-nav-active{
+	color: #00FFFF;
+	border:#00FFFF solid 1px;
+	box-sizing: content-box;
+}
+.header-face{
+	width: 1.8rem;
+	height: 1.8rem;
+	margin-right: 3.5rem;
+}
+.toLogin{
+	margin-right: 3.5rem;
+}
+.header-cancel{
+	width: 1rem;
+	height: 1rem;
+	cursor: pointer;
+	margin-right: 3.7rem;
+}
+.header-search{
+	width: 1.2rem;
+	height: 1.2rem;
+	margin-right: 1.4rem;
+}
+.toLogin{
+	font-size: 1.2rem;
+	color: white;
+}
+.container-item1{
+	height: 100vh;
+	width: 100%;
+	background-color: #00003F;
+}
+.footer-left-center{
+	width: 30em;
+}
+.footer-info-tt{
+	width: 4em;
+}
+.footer-info-item{
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 0.6rem;
+}
+.webLink,.wechatLink{
+	width: 1.5rem;
+	height: 1.25rem;
+	margin: 2.5rem 1rem 2.5rem 0;
+}
+</style>

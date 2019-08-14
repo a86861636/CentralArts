@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<link href="../css/common.css" rel="stylesheet" type="text/css" /> 
+</head>
+<body>
+<container>
+	<img class="container-left" src="../img/registerBG.png"></img>
+	<div class="container-right flex-col">
+		<div class="form-box">
+			<div class="register">注册</div>
+			<div class="input-item">
+				<div class="input-label">
+					姓 名
+				</div>
+				<input type="text" class="input-text">
+			</div>
+			<div class="input-item">
+				<div class="input-label">手 机 号</div>
+				<input type="tel" class="input-text">
+			</div>
+			<div class="input-item">
+				<div class="input-label">密 码</div>
+				<input type="password" class="input-text">
+			</div>
+			<div class="input-item">
+				<div class="input-label">再次确认</div>
+				<input type="password" type="text" class="input-text">
+			</div>
+			<div class="input-item">
+				<div class="input-label">手机验证</div>
+				<div class="input-code-box">
+					<input class="input-code">
+					<div class="sendCode">发送验证码</div>
+				</div>
+			</div>
+			<div class="button-submit-box">
+				<div class="button-submit">创建账号</div>
+				<div class="flex-row protocol-box">
+					<input type="checkbox" class="checkBox"></input>
+					<div class="flex-full">我已阅读并接受</div>
+					<div class="protocol">用户协议</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</container>
+<footer>
+	<div class="footer-copyright">版权所有 2007-2019 中央美术学院 Copyright © 2007-2019 CAFA. All Rights Reserved.</div>
+</footer>
+</body>
+</html>
+<style>
+container{
+	display: flex;
+	flex-direction: row;
+	height: 100vh;
+	padding-bottom: 2.4rem;
+}
+.container-left{
+	display: block;
+	max-width: 40%;
+}
+.container-right{
+	flex: 1;
+}
+.form-box{
+	max-width: 80%;
+	min-width: 55%;
+}
+.form-box{
+	margin: auto;
+}
+.register{
+	font-size: 2.5rem;
+	text-align: center;
+	color:rgba(0,0,63,1);
+	margin-bottom: 2.8rem;
+}
+.input-label{
+	font-size: 1.3rem;
+	color:rgba(0,0,63,1);
+	margin: 1.8rem 0 0.6rem 0;
+}
+.input-text{
+	height: 2.7rem;
+	width: 100%;
+	border-color: #808080;
+	padding: 0 0.5em;
+}
+.input-code-box{
+	height: 2.7rem;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+.input-code{
+	flex: 1;
+	height: 2.7rem;
+	border-color: #808080;
+	padding: 0 0.5em;
+}
+.sendCode{
+	white-space: nowrap;
+	line-height: 2.7rem;
+	height: 2.7rem;
+	color: white;
+	background-color: #00003F;
+	padding: 0 1em;
+	user-select: none;
+	cursor: pointer;
+}
+.button-submit-box{
+	width: 20em;
+	margin: 2.3rem auto 0 auto;
+}
+.button-submit{
+	height: 2.7rem;
+	background-color: #00003F;
+	color: white;
+	line-height: 2.7rem;
+	text-align: center;
+	width: 100%;
+	font-size: 1.3rem;
+	cursor: pointer;
+}
+.protocol-box{
+	padding: 0 0.2em;
+	margin-top: 1.2rem;
+	font-size: 1rem;
+	align-items: center;
+	color: #8B8583;
+}
+.protocol{
+	color: #00003F;
+	cursor: pointer;
+}
+</style>
