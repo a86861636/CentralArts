@@ -14,15 +14,14 @@
 	</div>
 </div>
 <div class="header-center align-center">
-	<div class="header-nav">策展案例</div>
-	<div class="header-nav">策展资源</div>
-	<div class="header-nav">关于我们</div>
-	<div class="header-nav">开始实验</div>
-</div>
+	<div class="header-nav">{%trans "策展案例" %}</div>
+	<div class="header-nav">{%trans "策展资源" %}</div>
+	<div class="header-nav">{%trans "关于我们" %}</div>
+	<div class="header-nav">{%trans "开始实验" %}</div>
 <div class="header-right align-center">
 	<img class="header-search" src="../img/search.png"></img>
 	<img class="header-face" src="../img/face.png"></img>
-	<div class="toLogin">登录</div>
+	<div class="toLogin">{%trans "登录</div>
 	<img class="header-cancel" src="../img/cancel.png"></img>
 	<img class="header-item"></img>
 </div>
@@ -30,16 +29,16 @@
 <container>
 
 <aside>
-	<div class="aside-nav">使用规则</div>
-	<div class="aside-nav">用户行为</div>
-	<div class="aside-nav">知识产权</div>
-	<div class="aside-nav">隐私政策</div>
-	<div class="aside-nav">条款条件</div>
+	<div class="aside-nav">{%trans "使用规则" %}</div>
+	<div class="aside-nav">{%trans "用户行为" %}</div>
+	<div class="aside-nav">{%trans "知识产权" %}</div>
+	<div class="aside-nav">{%trans "隐私政策" %}</div>
+	<div class="aside-nav">{%trans "条款条件" %}</div>
 </aside>
 <article>
-	<div class="article-tt">用户协议</div>
+	<div class="article-tt">{%trans "用户协议" %}</div>
 	<div class="article">
-		欢迎您使用美术博物馆虚拟实验室（cafa）服务（下称：本服务）
+		{%trans "欢迎您使用美术博物馆虚拟实验室（cafa）服务（下称：本服务）
 		请您仔细阅下方条款，若您对本协议的任何条款存有异议，您可以第一时间选择不进入优设。
 		当您借助微信提供的开放平台二维码扫码成功，在进入优设后上发布的任何内容均意味着您（即用户）
 		完全接受本协议项下的全部条款。
@@ -48,12 +47,12 @@
 		并接受本协议项下的全部内容，并与优设达成本协议。
 		博物馆虚拟实验室（cafa）有权随时对本协议进行修改，用户在登录使用前如果不同意本协议的修改，可以放
 		弃使用或访问本网站，如果用户选择在本协议变更后继续访问或使用本网站，则视为用户已经接受本协议的修改。
-		以您继续遵守这些条款为条件，我们允许您进入本服务仅供您个人使用。
+		以您继续遵守这些条款为条件，我们允许您进入本服务仅供您个人使用。" %}
 	</div>
 </article>
 </container>
 <footer>
-	<div class="footer-copyright">版权所有 2007-2019 中央美术学院 Copyright © 2007-2019 CAFA. All Rights Reserved.</div>
+	<div class="footer-copyright">{%trans "版权所有 2007-2019 中央美术学院 Copyright © 2007-2019 CAFA. All Rights Reserved." %}</div>
 </footer>
 </body>
 </html>
@@ -67,7 +66,7 @@
 container{
 	display: flex;
 	flex-direction: row;
-	height: 100vh;
+	min-height: 100vh;
 	padding-bottom: 2.4rem;
 	padding-top: 4rem;
 }

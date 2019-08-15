@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<link href="../css/common.css" rel="stylesheet" type="text/css" /> 
+</head>
+<body>
+	<!-- VLAM精选 -->
+	<div class="title-box">
+		<div class="item-tt">{%trans "VLAM精选" %}</div>
+		<div class="checkMore">{%trans "查看更多" %}</div>
+	</div>
+	<div class="vlam-choiceness">
+		<div class="vlam-item">
+			<div class="vlam-text">111111</div>
+			<div class="vlam-mask"></div>
+			<img src="../img/vlam1.png" class="vlam-photo"></img>
+		</div>
+		<div class="vlam-item">
+			<div class="vlam-text">1111</div>
+			<div class="vlam-mask"></div>
+			<img src="../img/vlam2.png" class="vlam-photo"></img>
+		</div>
+		<div class="vlam-item">
+			<div class="vlam-text">1111</div>
+			<div class="vlam-mask"></div>
+			<img src="../img/vlam2.png" class="vlam-photo"></img>
+		</div>
+	</div>
+</body>
+</html>
+<style>
+.title-box{
+	flex-direction: row;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.checkMore{
+	text-align: center;
+	border: #00003F 0.2rem solid;
+	width: 6.3rem;
+	height: 2.4rem;
+	line-height: 2rem;
+	color: #00003F;
+	cursor: pointer;
+	font-size: 1.1rem;
+}
+.item-tt{
+	font-size: 2.1rem;
+	color:rgba(0,0,63,1);
+}
+/* vlam-choiceness */
+.vlam-choiceness{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 2.7rem 0 3rem 0;
+}
+.vlam-photo{
+	width: 23.5rem;
+	height: 100%;
+}
+.vlam-text{
+	display: none;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	left: 50%;
+	top: 50%;
+}
+.vlam-item{
+	position: relative
+}
+.vlam-item:hover .vlam-text{
+	display: block;
+}
+.vlam-item:hover .vlam-mask{
+	display: block;
+}
+.vlam-mask{
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 0.5;
+}
+</style>

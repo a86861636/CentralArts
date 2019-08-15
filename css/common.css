@@ -10,6 +10,12 @@
 	padding: 0;
 	margin: 0;
 }
+button{
+	margin: 0;
+	padding: 0;
+	border: 1px solid transparent; /* 自定义边框 */
+	outline: none;    /* 消除默认点击蓝色边框效果 */
+}
 .text-c{
 	text-align: center;
 }
@@ -40,10 +46,10 @@
 
 /* 页面样式 */
 body{
-	position:relative
+	position:relative;
 }
 html{
-	font-size: 12px;
+	font-size: 18px;
 }
 header{
 	position: absolute;
@@ -130,7 +136,6 @@ container{
 	flex-direction: row;
 }
 .footer-info{
-	height: 225px;
 	display: flex;
 	flex-direction: row;
 	color: #757575;
@@ -144,6 +149,7 @@ container{
 }
 .footer-left{
 	align-items: center;
+	padding-bottom: 2.1rem;
 }
 .footer-right{
 	flex-direction: row;
