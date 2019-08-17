@@ -4,11 +4,13 @@
  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">  
  <meta http-equiv="X-UA-Compatible" content="ie=edge">  
 <link href="./css/common.css" rel="stylesheet" type="text/css" /> 
- <title>中央美院</title>  
+<script type="text/javascript" src="./js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+<title>中央美院首页</title>  
 </head>  
 <body>  
 <!-- 头部导航栏 -->
-<header>
+<header class="header">
 	<div class="header-left align-center">
 		<img class="header-icon align-center" src="img/logo.png"></img>
 		<div class="change-language">
@@ -16,17 +18,17 @@
 		</div>
 	</div>
 	<div class="header-center align-center">
-		<div class="header-nav">{%trans "策展案例" %}</div>
-		<div class="header-nav">{%trans "策展资源" %}</div>
-		<div class="header-nav">{%trans "关于我们" %}</div>
-		<div class="header-nav-active">{%trans "开始实验" %}</div>
+		<div class="header-nav"><!-- {%trans " -->策展案例<!-- " %} --></div>
+		<div class="header-nav"><!-- {%trans " -->策展资源<!-- " %} --></div>
+		<div class="header-nav"><!-- {%trans " -->关于我们<!-- " %} --></div>
+		<div class="header-nav-active"><!-- {%trans " -->开始实验<!-- " %} --></div>
 	</div>
 	<div class="header-right align-center">
 		<img class="header-search" src="img/search.png"></img>
 		<img class="header-face" src="img/face.png"></img>
-		<div class="toLogin">{%trans "登录" %}</div>
+		<div class="toLogin"><!-- {%trans " -->登录<!-- " %} --></div>
 		<img class="header-cancel" src="img/cancel.png"></img>
-		<img class="header-item"></img>
+		<img src="img/item.png" class="header-item"></img>
 	</div>
 </header>
 <container>
@@ -36,34 +38,34 @@
 	<div class="container-item2">
 		<!-- 通告部分 需要动态加载 -->
 		<div class="notice-box">
-			<div class="notice-tt">{%trans "公告" %}</div>
+			<div class="notice-tt"><!-- {%trans " -->公告<!-- " %} --></div>
 			<div class="notice-delete">—</div>
 			<img src="./img/left.png" class="notice-left"></img>
 			<div class="notice-item-box">
 				<div class="notice-item">
-					<div class="notice-icon-active">{%trans "通告" %}</div>
+					<div class="notice-icon-active"><!-- {%trans " -->通告<!-- " %} --></div>
 					<div class="notice-ct-active">
-						<div class="notice-ct-tt">{%trans "美术博物馆虚拟策展实验室" %}</div>
-						<div class="notice-time">{%trans "2019年8月9日" %}</div>
+						<div class="notice-ct-tt"><!-- {%trans " -->美术博物馆虚拟策展实验室<!-- " %} --></div>
+						<div class="notice-time"><!-- {%trans " -->2019年8月9日<!-- " %} --></div>
 					</div>
 				</div><div class="notice-item">
-					<div class="notice-icon">{%trans "通告" %}</div>
+					<div class="notice-icon"><!-- {%trans " -->通告<!-- " %} --></div>
 					<div class="notice-ct">
-						<div class="notice-ct-tt">{%trans "美术博物馆虚拟策展实验室" %}</div>
-						<div class="notice-time">{%trans "2019年8月9日" %}</div>
+						<div class="notice-ct-tt"><!-- {%trans " -->美术博物馆虚拟策展实验室<!-- " %} --></div>
+						<div class="notice-time"><!-- {%trans " -->2019年8月9日<!-- " %} --></div>
 					</div>
 				</div><div class="notice-item">
-					<div class="notice-icon">{%trans "通告" %}</div>
+					<div class="notice-icon"><!-- {%trans " -->通告<!-- " %} --></div>
 					<div class="notice-ct">
-						<div class="notice-ct-tt">{%trans "美术博物馆虚拟策展实验室" %}</div>
-						<div class="notice-time">{%trans "2019年8月9日" %}</div>
+						<div class="notice-ct-tt"><!-- {%trans " -->美术博物馆虚拟策展实验室<!-- " %} --></div>
+						<div class="notice-time"><!-- {%trans " -->2019年8月9日<!-- " %} --></div>
 					</div>
 				</div>
 				<div class="notice-item">
-					<div class="notice-icon">{%trans "通告" %}</div>
+					<div class="notice-icon"><!-- {%trans " -->通告<!-- " %} --></div>
 					<div class="notice-ct">
-						<div class="notice-ct-tt">{%trans "美术博美术博物馆虚拟美术博物馆虚拟物馆虚拟策展实验室" %}</div>
-						<div class="notice-time">{%trans "2019年8月9日" %}</div>
+						<div class="notice-ct-tt"><!-- {%trans " -->美术博美术博物馆虚拟美术博物馆虚拟物馆虚拟策展实验室<!-- " %} --></div>
+						<div class="notice-time"><!-- {%trans " -->2019年8月9日<!-- " %} --></div>
 					</div>
 				</div>
 			</div>
@@ -71,22 +73,34 @@
 		</div>
 		<!-- VLAM精选 -->
 		<div class="title-box">
-			<div class="item-tt">{%trans "VLAM精选" %}</div>
-			<div class="checkMore">{%trans "查看更多" %}</div>
+			<div class="item-tt"><!-- {%trans " -->VLAM精选<!-- " %} --></div>
+			<div class="checkMore"><!-- {%trans " -->查看更多<!-- " %} --></div>
 		</div>
 		<div class="vlam-choiceness">
 			<div class="vlam-item">
-				<div class="vlam-text">111111</div>
-				<div class="vlam-mask"></div>
+				<div class="vlam-text">
+					<p>太虚之境</p>
+					<p class="vlam-author">埃利希</p>
+				</div>
+				<div class="vlam-mask">
+					<p>太虚之境</p>
+					<p class="vlam-author">埃利希</p>
+				</div>
 				<img src="./img/vlam1.png" class="vlam-photo"></img>
 			</div>
 			<div class="vlam-item">
-				<div class="vlam-text">1111</div>
+				<div class="vlam-text">
+					<p>太虚之境</p>
+					<p class="vlam-author">埃利希</p>
+				</div>
 				<div class="vlam-mask"></div>
 				<img src="./img/vlam2.png" class="vlam-photo"></img>
 			</div>
 			<div class="vlam-item">
-				<div class="vlam-text">1111</div>
+				<div class="vlam-text">
+					<p>太虚之境</p>
+					<p class="vlam-author">埃利希</p>
+				</div>
 				<div class="vlam-mask"></div>
 				<img src="./img/vlam2.png" class="vlam-photo"></img>
 			</div>
@@ -94,8 +108,8 @@
 		
 		<!-- 策展资源 -->
 		<div class="title-box">
-			<div class="item-tt">{%trans "策展资源" %}</div>
-			<div class="checkMore">{%trans "查看更多" %}</div>
+			<div class="item-tt"><!-- {%trans " -->策展资源<!-- " %} --></div>
+			<div class="checkMore"><!-- {%trans " -->查看更多<!-- " %} --></div>
 		</div>
 		
 		<div class="Curator-resources">
@@ -103,33 +117,33 @@
 				<div class="Curator-icon-box">
 					<img class="Curator-icon" src="./img/curator (2).png">
 				</div>
-				<div class="curator-text1">{%trans "展览空间" %}</div>
-				<div class="curator-text2">{%trans "跨越空间阻隔" %}</div>
-				<div class="curator-text3">{%trans "漫游于国内外虚拟展览空间" %}</div>
+				<div class="curator-text1"><!-- {%trans " -->展览空间<!-- " %} --></div>
+				<div class="curator-text2"><!-- {%trans " -->跨越空间阻隔<!-- " %} --></div>
+				<div class="curator-text3"><!-- {%trans " -->漫游于国内外虚拟展览空间<!-- " %} --></div>
 			</div>
 			<div class="Curator-item">
 				<div class="Curator-icon-box">
 					<img class="Curator-icon1" src="./img/curator (3).png">
 				</div>
-				<div class="curator-text1">{%trans "艺术品数据" %}</div>
-				<div class="curator-text2">{%trans "汇聚全球艺术机构数字资源" %}</div>
-				<div class="curator-text3">{%trans "详尽的艺术品数据库供教学与科研使用" %}</div>
+				<div class="curator-text1"><!-- {%trans " -->艺术品数据<!-- " %} --></div>
+				<div class="curator-text2"><!-- {%trans " -->汇聚全球艺术机构数字资源<!-- " %} --></div>
+				<div class="curator-text3"><!-- {%trans " -->详尽的艺术品数据库供教学与科研使用<!-- " %} --></div>
 			</div>
 			<div class="Curator-item">
 				<div class="Curator-icon-box">
 					<img class="Curator-icon2" src="./img/curator (4).png">
 				</div>
-				<div class="curator-text1">{%trans "展览空间" %}</div>
-				<div class="curator-text2">{%trans "跨越空间阻隔" %}</div>
-				<div class="curator-text3">{%trans "漫游于国内外虚拟展览空间" %}</div>
+				<div class="curator-text1"><!-- {%trans " -->展览空间<!-- " %} --></div>
+				<div class="curator-text2"><!-- {%trans " -->跨越空间阻隔<!-- " %} --></div>
+				<div class="curator-text3"><!-- {%trans " -->漫游于国内外虚拟展览空间<!-- " %} --></div>
 			</div>
 			<div class="Curator-item">
 				<div class="Curator-icon-box">
 					<img class="Curator-icon3" src="./img/curator (1).png">
 				</div>
-				<div class="curator-text1">{%trans "展览空间" %}</div>
-				<div class="curator-text2">{%trans "跨越空间阻隔" %}</div>
-				<div class="curator-text3">{%trans "漫游于国内外虚拟展览空间" %}</div>
+				<div class="curator-text1"><!-- {%trans " -->展览空间<!-- " %} --></div>
+				<div class="curator-text2"><!-- {%trans " -->跨越空间阻隔<!-- " %} --></div>
+				<div class="curator-text3"><!-- {%trans " -->漫游于国内外虚拟展览空间<!-- " %} --></div>
 			</div>
 		</div>
 		
@@ -153,17 +167,17 @@
 					以建立、完善与呈现，使实验室成为全球最大的美术博物馆数字资
 					源数据库，并成为全球展览策划和研究重镇。</p>
 				</div>
-				<div class="us-checkMore">{%trans "查看更多" %}</div>
+				<div class="us-checkMore"><!-- {%trans " -->查看更多<!-- " %} --></div>
 			</div>
 			<div class="us-right">
 				<div class="us-right-video">
 					<img class="video-bg" src="img/bg.png">
-					<div class="us-tt">{%trans "实验项目介绍" %}</div>
-					<div class="us-checkMore">{%trans "查看更多" %}</div>
+					<div class="us-tt"><!-- {%trans " -->实验项目介绍<!-- " %} --></div>
+					<div class="us-checkMore"><!-- {%trans " -->查看更多<!-- " %} --></div>
 				</div>
 				<div class="us-right-team">
-					<div class="us-tt">{%trans "教师团队</div>
-					<div class="us-checkMore">{%trans "查看更多" %}</div>
+					<div class="us-tt"><!-- {%trans " -->教师团队</div>
+					<div class="us-checkMore"><!-- {%trans " -->查看更多<!-- " %} --></div>
 				</div>
 			</div>
 		</div>
@@ -175,24 +189,24 @@
 	<div class="footer-info">
 		<div class="footer-left">
 			<div class="footer-left-center">
-				<div class="footer-name">{%trans "中央美术学院虚拟实验室" %}</div>
+				<div class="footer-name"><!-- {%trans " -->中央美术学院虚拟实验室<!-- " %} --></div>
 				<div class="footer-visit">
 					<img class="webLink" src="img/web.png"></img><img class="wechatLink" src="img/wechat.png"></img>
 				</div>
 				<div class="footer-info-item">
-					<div class="footer-info-tt">{%trans "地 址" %}</div>
-					<div class="footer-info-ct">{%trans "北京市朝阳区花家地南街8号中央美术学院北区14号楼F1" %}</div>
+					<div class="footer-info-tt"><!-- {%trans " -->地 址<!-- " %} --></div>
+					<div class="footer-info-ct"><!-- {%trans " -->北京市朝阳区花家地南街8号中央美术学院北区14号楼F1<!-- " %} --></div>
 				</div>
 				<div class="footer-info-item">
-					<div class="footer-info-tt">{%trans "邮政编码" %}</div>
-					<div class="footer-info-ct">{%trans "100102</div>
+					<div class="footer-info-tt"><!-- {%trans " -->邮政编码<!-- " %} --></div>
+					<div class="footer-info-ct"><!-- {%trans " -->100102</div>
 				</div>
 				<div class="footer-info-item">
-					<div class="footer-info-tt">{%trans "联系方式" %}</div> 
+					<div class="footer-info-tt"><!-- {%trans " -->联系方式<!-- " %} --></div> 
 					<div class="footer-info-ct">+86（0）10-64771910</div> 
 				</div>
 				<div class="footer-info-item">
-					<div class="footer-info-tt">{%trans "邮件地址" %}</div>
+					<div class="footer-info-tt"><!-- {%trans " -->邮件地址<!-- " %} --></div>
 					<div class="footer-info-ct">vlam@cafa.edu.cn</div> 
 				</div>
 			</div>
@@ -200,25 +214,25 @@
 		<div class="footer-right">
 			<div class="footer-right-center">
 				<div class="footer-row1">
-					<div class="row1-tt">{%trans "更多信息" %}</div>
-					<div class="row1-ct">{%trans "实验室介绍" %}</div>
-					<div class="row1-ct">{%trans "实验项目介绍" %}</div>
-					<div class="row1-ct">{%trans "新闻动态" %}</div>
-					<div class="row1-ct">{%trans "合作伙伴" %}</div>
+					<div class="row1-tt"><!-- {%trans " -->更多信息<!-- " %} --></div>
+					<div class="row1-ct"><!-- {%trans " -->实验室介绍<!-- " %} --></div>
+					<div class="row1-ct"><!-- {%trans " -->实验项目介绍<!-- " %} --></div>
+					<div class="row1-ct"><!-- {%trans " -->新闻动态<!-- " %} --></div>
+					<div class="row1-ct"><!-- {%trans " -->合作伙伴<!-- " %} --></div>
 				</div>
 				<div class="footer-row2">
-					<div class="row1-tt">{%trans "推荐站点" %}</div>
-					<div class="row1-ct">{%trans "中央美术学院" %}</div>
-					<div class="row1-ct">{%trans "中央美术学院艺术管理与教育学院" %}</div>
-					<div class="row1-ct">{%trans "展具模型库" %}</div>
-					<div class="row1-ct">{%trans "iLab-X实验空间" %}</div>
+					<div class="row1-tt"><!-- {%trans " -->推荐站点<!-- " %} --></div>
+					<div class="row1-ct"><!-- {%trans " -->中央美术学院<!-- " %} --></div>
+					<div class="row1-ct"><!-- {%trans " -->中央美术学院艺术管理与教育学院<!-- " %} --></div>
+					<div class="row1-ct"><!-- {%trans " -->展具模型库<!-- " %} --></div>
+					<div class="row1-ct"><!-- {%trans " -->iLab-X实验空间<!-- " %} --></div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 <footer>
-	<div class="footer-copyright">{%trans "版权所有 2007-2019 中央美术学院 Copyright © 2007-2019 CAFA. All Rights Reserved." %}</div>
+	<div class="footer-copyright"><!-- {%trans " -->版权所有 2007-2019 中央美术学院 Copyright © 2007-2019 CAFA. All Rights Reserved.<!-- " %} --></div>
 </footer>
 </body>  
 </html>
@@ -226,60 +240,9 @@
 body{
 	padding-bottom: 2.4rem;
 }
-.header-icon{
-	height: 1.8rem;
-	margin-left: 1.7rem;
-}
-.change-language{
-	margin-left: 1.3rem;
-}
-.language{
-	font-size: 1.1rem;
-	padding: 0 0.2rem;
-	color: #8ADBEB;
-	cursor: pointer;
-}
-.language-active{
-	color: white;
-}
-.header-nav,.header-nav-active{
-	color: #9EADFE;
-	height: 2.4rem;
-	width: 6.2rem;
-	line-height: 2.4rem;
-	text-align: center;
-	cursor: pointer;
-}
-.header-nav-active{
-	color: #00FFFF;
-	border:#00FFFF solid 1px;
-	box-sizing: content-box;
-}
-.header-face{
-	width: 1.8rem;
-	height: 1.8rem;
-	margin-right: 3.5rem;
-}
-.toLogin{
-	margin-right: 3.5rem;
-}
-.header-cancel{
-	width: 1rem;
-	height: 1rem;
-	cursor: pointer;
-	margin-right: 3.7rem;
-}
-.header-search{
-	width: 1.2rem;
-	height: 1.2rem;
-	margin-right: 1.4rem;
-}
-.toLogin{
-	font-size: 1.2rem;
-	color: white;
-}
 .container-item1{
 	height: 100vh;
+	min-width: 74rem;
 	width: 100%;
 	background-color: #00003F;
 	display: flex;
@@ -500,6 +463,15 @@ body{
 	transform: translate(-50%,-50%);
 	left: 50%;
 	top: 50%;
+	color: white;
+	z-index: 10;
+	font-size: 2rem;
+	text-align: center;
+	cursor: pointer;
+}
+.vlam-author{
+	font-size: 1rem;
+	text-align: center;
 }
 .vlam-item{
 	position: relative
@@ -519,6 +491,7 @@ body{
 	height: 100%;
 	background-color: black;
 	opacity: 0.5;
+	cursor: pointer;
 }
 /* Curator-resources */
 .Curator-resources{

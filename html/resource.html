@@ -38,10 +38,10 @@
 		<div class="case-swiper-top">
 			<div class="case-swiper-tt">策展案例</div>
 			<div class="case-swiper-item">
-				<div class="case-item-overview">概览</div>
-				<div class="case-item-checkAll">查看全部</div>
+				<div class="resource-item-overview">概览</div>
+				<div class="resource-item-checkAll">查看全部</div>
 			</div>
-			
+			<div class="upload-model">上传新模型</div>
 		</div>
 		<div class="swiper-container">
 		  <div class="swiper-wrapper">
@@ -232,20 +232,34 @@
 .swiper-container-box{
 	position: relative;
 }
-.case-item-overview{
+.resource-item-overview{
 	margin-right: 1.25rem;
+}
+.upload-model{
+	position: absolute;
+	left: 50%;
+	bottom: 0rem;
+	z-index: 11;
+	color: white;
+	transform: translate(-50%,0);
+	padding: 0 0.6rem;
+	line-height: 1.5rem;
+	background-color: #0332E0;
+	border-radius: 2px;
+	cursor: pointer;
 }
 .case-swiper-top{
 	position: absolute;
-	min-height: 10rem;
-	height: 6%;
+	min-height: 15rem;
+	height: 13%;
 	left: 0;
 	width: 100%;
 	color: white;
 	z-index:10;
 	display: flex;
-	align-items: flex-end;
+	align-items: center;
 	justify-content: flex-end;
+	z-index:9;
 }
 .case-swiper-tt{
 	width: 33.3%;

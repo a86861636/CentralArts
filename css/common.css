@@ -48,11 +48,13 @@ button{
 body{
 	position:relative;
 }
+/* 媒体查询 */
 html{
 	font-size: 18px;
 }
-header{
-	position: absolute;
+
+.header,.header-active{
+	position: fixed;
 	left: 0;
 	top: 0;
 	height: 4rem;
@@ -61,6 +63,11 @@ header{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	background-color:rgba(0,0,0,0.5);
+	min-width: 74rem;
+	z-index: 51;
+}
+.header-active{
 	background: -moz-linear-gradient(left, rgb(0,255,255), rgb(3,50,224), rgb(255,125,218));
 	background: -webkit-linear-gradient(left, rgb(0,255,255), rgb(3,50,224), rgb(255,125,218));
 	background: -o-linear-gradient(left, rgb(0,255,255), rgb(3,50,224), rgb(255,125,218));
@@ -113,9 +120,15 @@ container{
 }
 .toLogin{
 	margin-right: 3.5rem;
-	cursor: pointer;
+	line-height: 1;
 }
 .header-cancel{
+	width: 1rem;
+	height: 1rem;
+	cursor: pointer;
+	margin-right: 3.7rem;
+}
+.header-item{
 	width: 1rem;
 	height: 1rem;
 	cursor: pointer;
@@ -125,6 +138,7 @@ container{
 	width: 1.2rem;
 	height: 1.2rem;
 	margin-right: 1.4rem;
+	display: none;
 }
 .toLogin{
 	font-size: 1.2rem;
@@ -151,9 +165,14 @@ container{
 	align-items: center;
 	padding-bottom: 2.1rem;
 }
+.header-left,.header-right{
+	width: 15rem;
+}
+.header-right{
+	justify-content: flex-end;
+}
 .footer-right{
-	flex-direction: row;
-	
+	flex-direction: row-reverse;
 }
 .footer-name{
 	font-size: 1.7rem;

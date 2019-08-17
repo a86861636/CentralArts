@@ -2,6 +2,36 @@ var globalUrl = "http://192.168.8.204:8001";
 
 $(document).ready(function(){
 	console.log($(".sendCode"));
+	//处理头部导航栏登录状态和样式切换
+	let isLogin = false;
+	let user_data = {
+		face: "https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=2136300761,4118574064&fm=85&s=3E63EA164415B43B5093166A03005069",
+		name: "user",
+	}
+	//样式切换
+	$(".header-cancel").hide();
+	$(".header-center").hide();
+	$(".header-cancel").click(function(){
+		$(".header-active").attr("class","header");
+		$(".header-item").toggle();
+		$(".header-cancel").toggle();
+		$(".header-center").fadeOut(500);
+	})
+	$(".header-item").click(function(){
+		$(".header").attr("class","header-active");
+		$(".header-cancel").toggle();
+		$(".header-item").toggle();
+		$(".header-center").fadeIn(500);
+	})
+	
+	//登录样式
+	if(isLogin){
+		console.log("logined")
+	}else{
+		console.log("onLogin")
+		$(".header-face").hide();
+	}
+	//绑定发送验证码事件
 	$(".sendCode").click(function(){
 		sendCode();
 	})
