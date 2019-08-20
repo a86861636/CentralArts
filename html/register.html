@@ -17,36 +17,35 @@
 				<div class="input-label">
 					{%trans "姓 名" %}
 				</div>
-				<input type="text" class="input-text">
+				<input name="name" type="text" class="input-text">
 			</div>
 			<div class="input-item">
 				<div class="input-label">{%trans "手 机 号" %}</div>
-				<input type="tel" class="input-text">
+				<input name="tel" type="tel" class="input-text">
 			</div>
 			<div class="input-item">
 				<div class="input-label">{%trans "密 码" %}</div>
-				<input type="password" class="input-text">
+				<input name="password" type="password" class="input-text">
 			</div>
 			<div class="input-item">
 				<div class="input-label">{%trans "再次确认" %}</div>
-				<input type="password" type="text" class="input-text">
+				<input name="passwordR" type="password" type="text" class="input-text">
 			</div>
 			<div class="input-item">
 				<div class="input-label">{%trans "手机验证" %}</div>
 				<div class="input-code-box">
-					<input class="input-code">
+					<input name="code" class="input-code">
 					<button class="sendCode">{%trans "发送验证码" %}</button>
 				</div>
 			</div>
 			<div class="button-submit-box">
-				<div class="button-submit">{%trans "创建账号" %}</div>
+				<button class="button-submit register">{%trans "创建账号" %}</button>
 				<div class="flex-row protocol-box">
-					<input type="checkbox" class="checkBox"></input>
+					<input name="agree" type="checkbox" class="checkBox"></input>
 					<div class="flex-full">{%trans "我已阅读并接受" %}</div>
 					<div class="protocol">{%trans "用户协议" %}</div>
 				</div>
 			</div>
-			
 		</div>
 	</div>
 </container>

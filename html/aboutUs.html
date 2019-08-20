@@ -1,9 +1,193 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-	</head>
-	<body>
-	</body>
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<link href="../css/common.css" rel="stylesheet" type="text/css" /> 
+<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="../css/swiper.css">
+</head>
+<body>
+	<!-- 头部导航栏 -->
+	<header class="header">
+		<div class="header-left align-center">
+			<img class="header-icon align-center" src="../img/logo.png"></img>
+			<div class="change-language">
+				<div class="language language-active">中</div><div class="language">EN</div>
+			</div>
+		</div>
+		<div class="header-center align-center">
+			<div class="header-nav"><!-- {%trans " -->策展案例<!-- " %} --></div>
+			<div class="header-nav"><!-- {%trans " -->策展资源<!-- " %} --></div>
+			<div class="header-nav"><!-- {%trans " -->关于我们<!-- " %} --></div>
+			<div class="header-nav-active"><!-- {%trans " -->开始实验<!-- " %} --></div>
+		</div>
+		<div class="header-right align-center">
+			<img class="header-search" src="../img/search.png"></img>
+			<img class="header-face" src="../img/face.png"></img>
+			<div class="toLogin"><!-- {%trans " -->登录<!-- " %} --></div>
+			<img class="header-cancel" src="../img/cancel.png"></img>
+			<img src="../img/item.png" class="header-item"></img>
+		</div>
+	</header>
+	<div class="top"></div>
+	<div class="us-tt">关于我们</div>
+	<div class="lab-box">
+		<div class="lab-tt">实验室介绍</div>
+		<img class="lab-logo" src="../img/lab.png" />
+		<div class="lab-introduce">
+			中央美术学院是教育部唯一一所直属美术院校，也是具有百年历史的中国美术最高学府。
+			作为中央美术学院重要科研机构之一，美术博物馆虚拟实验室以数字互动技术为载体，聚焦美术博物馆展览研究与策划，为美术博物馆策展时间、理论研究提供数字
+			化虚拟平台，在策展教学的同时，充分利用交互系统与虚拟现实体验技术，以及丰富的专业数据资料，使预期的展览策划和重要展览现场能在虚拟数字系统中得以建立、
+			完善与呈现，使实验室成为全球最大的美术博物馆数字资源数据库，并成为全球展览策划和研究重镇。
+		</div>
+	</div>
+	<div class="project-box">
+		<div class="project-tt">实验项目介绍</div>
+		<video controls="controls" src="http://vfx.mtime.cn/Video/2019/03/19/mp4/190319222227698228.mp4" class="project-video">您的浏览器不支持 video 标签。</video>
+	</div>
+	<div class="teacher-box">
+		<div class="teacher-tt">教师团队</div>
+		<div class="teacher-item-box">
+			<div class="teacher-item">
+				<img src="../img/teacher-icon.png" class="teacher-icon">
+				<img src="../img/teacher-yu.png" class="teacher-photo">
+				<div class="teacher-info">
+					<div class="teacher-name">余丁教授</div>
+					<div class="teacher-job">中央美术学院艺术管理与教育学院院长</div>
+					<div class="teacher-job">中央美术学院国家艺术与文化政策研究所所长</div>
+					<div class="teacher-job">中央美术学院美术博物馆虚拟策展实验室主任</div>
+				</div>
+			</div>
+			<div class="teacher-item">
+				<img src="../img/teacher-icon.png" class="teacher-icon">
+				<img src="../img/teacher-kang.png" class="teacher-photo">
+				<div class="teacher-info">
+					<div class="teacher-name">康俐</div>
+					<div class="teacher-job">&nbsp;</div>
+					<div class="teacher-job">中央美术学院艺术管理与教育学院院长办公室主任</div>
+					<div class="teacher-job">中央美术学院美术博物馆虚拟策展实验室副主任</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="footer-copyright">{%trans "版权所有 2007-2019 中央美术学院 Copyright © 2007-2019 CAFA. All Rights Reserved." %}</div>
+	</footer>
+</body>
 </html>
+<style>
+body{
+	padding-bottom: 2.4rem;
+}
+.top{
+	background-color: #00003F;
+	height: 4rem;
+}
+.us-tt{
+	font-size: 2.5rem;
+	text-align: center;
+	height: 9.1rem;
+	line-height: 9.1rem;
+	color: white;
+	background: -moz-linear-gradient(left, #8039DD, #00003F,  #0758FF);
+	background: -webkit-linear-gradient(left, #8039DD, #00003F,  #0758FF);
+	background: -o-linear-gradient(left, #8039DD, #00003F,  #0758FF);
+}
+.lab-introduce{
+	line-height: 1.7rem;
+	font-size: 1rem;
+}
+.lab-box{
+	padding: 3.3rem 0;
+	background-color: #00003F;
+	color: white;
+}
+.lab-tt{
+	text-align: center;
+	font-size: 1.6rem;
+	color: white;
+}
+.lab-logo{
+	max-width: 31.2rem;
+	margin: 3rem auto;
+	display: block;
+}
+.lab-introduce{
+	width: 74rem;
+	margin: auto;
+}
+.project-tt{
+	color: white;
+	text-align: center;
+	font-size: 1.4rem;
+}
+.project-box{
+	min-height: 43rem;
+	background-image: url(../img/bg1.png);
+	background-size: 100% 100%;
+	padding: 3.5rem 0;
+}
+.project-video{
+	margin: 3.7rem auto 0 auto;
+	width: 55rem;
+	z-index: 10;
+	display: block;
+	background: #00003F;
+}
+.teacher-box{
+	padding: 2.9rem 0;
+}
+.teacher-tt{
+	color: #315091;
+	text-align: center;
+	font-size: 1.4rem;
+}
+.teacher-item-box{
+	width: 74rem;
+	margin: 2.9rem auto 0 auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+.teacher-item{
+	position: relative;
+	width: 30rem;
+	height: 18.1rem;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+	color: #315091;
+	text-align: right;
+	background-color: #F2F2F2;
+	padding-right: 1.8rem;
+	padding-bottom: 1.7rem;
+}
+.teacher-icon{
+	position: absolute;
+	left: -4.8rem;
+	top: 0;
+	width: 8rem;
+}
+.teacher-photo{
+	position: absolute;
+	left: 2rem;
+	bottom: 0;
+	max-width: 9.4rem;
+}
+.teacher-name{
+	font-size: 2.1rem;
+	margin-bottom: 1rem;
+}
+.teacher-job{
+	transform: 0.5rem;
+	width: 34rem;
+	font-size: 1.5rem;
+	line-height: 1.2;
+	transform: scale(0.5) translate(50%,0);
+	margin-bottom: -0.5rem;
+}
+</style>

@@ -5,6 +5,7 @@
 <title>中央美院登录页面</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 <link href="../css/common.css" rel="stylesheet" type="text/css" /> 
+<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="../js/common.js"></script>
 </head>
 <body>
@@ -12,22 +13,22 @@
 <container>
 	<div class="container-right flex-col">
 		<div class="form-box">
-			<div class="login-tt">{%trans "登录" %}</div>
+			<div class="login-tt"><!-- {%trans " -->登录<!-- " %} --></div>
 			<div class="input-item">
-				<div class="input-label">{%trans "手 机 号" %}</div>
-				<input type="tel" class="input-text">
+				<div class="input-label"><!-- {%trans " -->手 机 号<!-- " %} --></div>
+				<input name="tel" type="tel" class="input-text">
 			</div>
 			<div class="input-item">
-				<div class="input-label">{%trans "密 码" %}</div>
-				<input type="password" class="input-text">
+				<div class="input-label"><!-- {%trans " -->密 码<!-- " %} --></div>
+				<input name="password" type="password" class="input-text">
 			</div>
-			<div class="button-login">{%trans "登录" %}</div>
-			<div class="button-switch">{%trans "使用校园网账号登录" %}</div>
+			<div class="button-login"><!-- {%trans " -->登录<!-- " %} --></div>
+			<div class="button-switch"><!-- {%trans " -->使用校园网账号登录<!-- " %} --></div>
 		</div>
 	</div>
 </container>
 <footer>
-	<div class="footer-copyright">{%trans "版权所有 2007-2019 中央美术学院 Copyright © 2007-2019 CAFA. All Rights Reserved." %}</div>
+	<div class="footer-copyright"><!-- {%trans " -->版权所有 2007-2019 中央美术学院 Copyright © 2007-2019 CAFA. All Rights Reserved.<!-- " %} --></div>
 </footer>
 </body>
 </html>

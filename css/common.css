@@ -54,6 +54,18 @@ button{
 .flex-full{
 	flex: 1;
 }
+.toast{
+	padding: 15px 20px;
+	color: white;
+	background: rgba(0,0,0,0.6);
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	font-size: 1rem;
+	border-radius: 5px;
+	z-index: 99;
+}
 /* *{
 	font-family: "FZLTCHJW";
 	color: yellow;
@@ -62,12 +74,22 @@ button{
 /* 页面样式 */
 body{
 	position:relative;
+	min-height: 100vh;
 }
 /* 媒体查询 */
 html{
-	font-size: 18px;
+	font-size: 12px;
 }
-
+@media (min-width: 1080px) {
+    html{
+    	font-size: 16px ;
+    }
+}
+@media (min-width: 2400px) {
+    html{
+    	font-size: 18px ;
+    }
+}
 .header,.header-active{
 	position: fixed;
 	left: 0;

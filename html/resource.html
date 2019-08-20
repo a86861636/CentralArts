@@ -34,53 +34,184 @@
 		</div>
 	</header>
 	<!-- Swiper -->
-	<div class="swiper-container-box">
-		<div class="case-swiper-top">
+	<div style="display: none;" class="overview">
+		<div class="swiper-container-box">
+			<div class="case-swiper-top">
+				<div class="case-swiper-tt">策展资源</div>
+				<div class="case-swiper-item">
+					<div class="resource-item-overview">概览</div>
+					<div class="resource-item-checkAll">查看全部</div>
+				</div>
+				<a class="upload-model">上传新模型</a>
+			</div>
+			<div class="swiper-container">
+			  <div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="vlam-info">
+						<p class="vlam-icon">VLAM精选</p>
+						<div class="flex-row align-center">
+							<div class="vlam-name">太虚之镜</div>
+						</div>
+						<div class="vlam-more">查看更多</div>
+					</div>
+					<img class="swiper-img" src="../img/vlam2.png" />
+				</div>
+				<div class="swiper-slide">Slide 2</div>
+				<div class="swiper-slide">Slide 3</div>
+				<div class="swiper-slide">Slide 4</div>
+			  </div>
+			  <!-- Add Scrollbar -->
+			  <div class="swiper-scrollbar"></div>
+			</div>
+		</div>
+		<!-- Swiper JS -->
+		<script src="../js/swiper.js"></script>
+		
+		<!-- Initialize Swiper -->
+		<script>
+		  var swiper = new Swiper('.swiper-container', {
+			scrollbar: {
+			  el: '.swiper-scrollbar',
+			  hide: false,
+			},
+		  });
+		</script>
+		
+		<div class="resource-nav-box">
+			<div class="resource-nav">展览空间</div>
+			<div class="resource-nav-active">艺术品数据</div>
+			<div class="resource-nav">展具模型</div>
+		</div>
+		<div class="resource-item-box">
+			<div class="resource-item">
+				<img src="../img/resource%20(1).png" class="resource-img">
+				<div class="resource-mask">
+					<div class="resource-name">妇女头像</div>
+					<div class="resource-author">库尔贝（法国）</div>
+					<div class="resource-time">19世纪</div>
+					<div class="resource-type">布面油彩</div>
+				</div>
+			</div>
+			<div class="resource-item">
+				<img src="../img/resource%20(1).png" class="resource-img">
+				<div class="resource-mask">
+					<div class="resource-name">妇女头像</div>
+					<div class="resource-author">库尔贝（法国）</div>
+					<div class="resource-time">19世纪</div>
+					<div class="resource-type">布面油彩</div>
+				</div>
+			</div>
+			<div class="resource-item">
+				<img src="../img/resource%20(1).png" class="resource-img">
+				<div class="resource-mask">
+					<div class="resource-name">妇女头像</div>
+					<div class="resource-author">库尔贝（法国）</div>
+					<div class="resource-time">19世纪</div>
+					<div class="resource-type">布面油彩</div>
+				</div>
+			</div>
+			<div class="resource-item">
+				<img src="../img/resource%20(1).png" class="resource-img">
+				<div class="resource-mask">
+					<div class="resource-name">妇女头像</div>
+					<div class="resource-author">库尔贝（法国）</div>
+					<div class="resource-time">19世纪</div>
+					<div class="resource-type">布面油彩</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="allview">
+		<div class="case-swiper-top-active" >
 			<div class="case-swiper-tt">策展资源</div>
 			<div class="case-swiper-item">
 				<div class="resource-item-overview">概览</div>
 				<div class="resource-item-checkAll">查看全部</div>
 			</div>
-			<div class="upload-model">上传新模型</div>
+			<a class="upload-model-active">上传新模型</a>
 		</div>
-		<div class="swiper-container">
-		  <div class="swiper-wrapper">
-			<div class="swiper-slide">
-				<div class="vlam-info">
-					<p class="vlam-icon">VLAM精选</p>
-					<div class="flex-row align-center">
-						<div class="vlam-name">太虚之镜</div>
-					</div>
-					<div class="vlam-more">查看更多</div>
+		<div class="middle">
+			<div class="middle-box">
+				<div class="middle-box-tt">筛选</div>
+				<div class="middle-box-tt">
+					精选↓
 				</div>
-				<img class="swiper-img" src="../img/vlam2.png" />
 			</div>
-			<div class="swiper-slide">Slide 2</div>
-			<div class="swiper-slide">Slide 3</div>
-			<div class="swiper-slide">Slide 4</div>
-		  </div>
-		  <!-- Add Scrollbar -->
-		  <div class="swiper-scrollbar"></div>
+		</div>
+		<div class="container">
+			<div class="aside-box">
+				<div class="aside-nav">展厅空间</div>
+				<div class="aside-nav">展厅空间</div>
+				<div class="aside-nav">展厅空间</div>
+			</div>
+			<div class="resource-container">
+				<div class="resource-item1">
+					<img src="../img/resource%20(1).png" class="resource-img">
+					<div class="resource-mask">
+						<div class="resource-name1">妇女头像</div>
+						<div class="resource-author1">库尔贝（法国）</div>
+						<div class="resource-time1">19世纪</div>
+						<div class="resource-type1">布面油彩</div>
+					</div>
+				</div>
+				<div class="resource-item1">
+					<img src="../img/resource%20(1).png" class="resource-img">
+					<div class="resource-mask">
+						<div class="resource-name1">妇女头像</div>
+						<div class="resource-author1">库尔贝（法国）</div>
+						<div class="resource-time1">19世纪</div>
+						<div class="resource-type1">布面油彩</div>
+					</div>
+				</div>
+				<div class="resource-item1">
+					<img src="../img/resource%20(1).png" class="resource-img">
+					<div class="resource-mask">
+						<div class="resource-name1">妇女头像</div>
+						<div class="resource-author1">库尔贝（法国）</div>
+						<div class="resource-time1">19世纪</div>
+						<div class="resource-type1">布面油彩</div>
+					</div>
+				</div>
+				<div class="resource-item1">
+					<img src="../img/resource%20(1).png" class="resource-img">
+					<div class="resource-mask">
+						<div class="resource-name1">妇女头像</div>
+						<div class="resource-author1">库尔贝（法国）</div>
+						<div class="resource-time1">19世纪</div>
+						<div class="resource-type1">布面油彩</div>
+					</div>
+				</div>
+				<div class="resource-item1">
+					<img src="../img/resource%20(1).png" class="resource-img">
+					<div class="resource-mask">
+						<div class="resource-name1">妇女头像</div>
+						<div class="resource-author1">库尔贝（法国）</div>
+						<div class="resource-time1">19世纪</div>
+						<div class="resource-type1">布面油彩</div>
+					</div>
+				</div>
+				<div class="resource-item1">
+					<img src="../img/resource%20(1).png" class="resource-img">
+					<div class="resource-mask">
+						<div class="resource-name1">妇女头像</div>
+						<div class="resource-author1">库尔贝（法国）</div>
+						<div class="resource-time1">19世纪</div>
+						<div class="resource-type1">布面油彩</div>
+					</div>
+				</div>
+				<div class="load-more">加载更多</div>
+			</div>
 		</div>
 	</div>
-	
-	
-	<!-- Swiper JS -->
-	<script src="../js/swiper.js"></script>
-	
-	<!-- Initialize Swiper -->
-	<script>
-	  var swiper = new Swiper('.swiper-container', {
-	    scrollbar: {
-	      el: '.swiper-scrollbar',
-	      hide: false,
-	    },
-	  });
-	</script>
-
+	<footer>
+		<div class="footer-copyright">{%trans "版权所有 2007-2019 中央美术学院 Copyright © 2007-2019 CAFA. All Rights Reserved." %}</div>
+	</footer>
 </body>
 </html>
 <style>
+	body{
+		padding-bottom: 6rem;
+	}
 .swiper-img{
 	width: 100%;
 	height: 100%;
@@ -124,7 +255,7 @@
 .resource-item-overview{
 	margin-right: 1.25rem;
 }
-.upload-model{
+.upload-model,.upload-model-active{
 	position: absolute;
 	left: 50%;
 	bottom: 0rem;
@@ -132,12 +263,15 @@
 	color: white;
 	transform: translate(-50%,0);
 	padding: 0 0.6rem;
-	line-height: 1.5rem;
+	line-height: 2;
 	background-color: #0332E0;
 	border-radius: 2px;
 	cursor: pointer;
 }
-.case-swiper-top{
+.upload-model-active{
+	bottom: 4rem;
+}
+.case-swiper-top,.case-swiper-top-active{
 	position: absolute;
 	min-height: 15rem;
 	height: 13%;
@@ -149,7 +283,14 @@
 	align-items: center;
 	justify-content: flex-end;
 	z-index:9;
+	font-weight: 600;
 }
+.case-swiper-top-active{
+	position: relative;
+	color: #00003F;
+	height: 19rem;
+}
+
 .case-swiper-tt{
 	width: 33.3%;
 	text-align: center;
@@ -190,5 +331,184 @@
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
+}
+.resource-nav-box{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.resource-nav,.resource-nav-active{
+	color: #00003F;
+	margin-right: 4.3rem;
+	font-size: 1.4rem;
+	cursor: pointer;
+}
+.resource-nav:last-child{
+	margin-left: 0;
+}
+.resource-nav-active{
+	font-weight: 600;
+}
+.resource-item-box{
+	width: 74rem;
+	margin: 3rem auto 3.6rem auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+.resource-item{
+	position: relative;
+	height: 17rem;
+	width: 17rem;
+	color: white;
+}
+.resource-item:hover .resource-mask{
+	display: block;
+}
+.resource-mask{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: -1;
+	background-color: rgba(0,0,0,0.4);
+	text-align: center;
+	line-height: 1;
+	display: none;
+}
+.resource-img{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: -1;
+}
+.resource-name{
+	font-size: 1.7rem;
+	margin-top: 6.5rem;
+}
+.resource-author{
+	font-size: 1rem;
+	transform: scale(0.8);
+	margin-top: 0.8rem;
+}
+
+.resource-time,.resource-type{
+	font-size: 1rem;
+	transform: scale(0.7);
+}
+.resource-time{
+	margin-top: 3rem;
+}
+.resource-type{
+	margin-top: 0.5rem;
+}
+.middle{
+	border: 1px #484875 solid;
+	height: 2.6rem;
+	line-height: 2.6rem;
+	box-sizing: content-box;
+	color: #00003F;
+}
+.middle-box{
+	width: 74rem;
+	margin: auto;
+	padding: 0 0.8rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.middle-box-tt{
+	font-size: 1.4rem;
+	transform: scale(0.5) translate(-50%,0);
+}
+.container{
+	margin: auto;
+	width: 74rem;
+	display: flex;
+	flex-direction: row;
+}
+.aside-box{
+	width: 12.5rem;
+	padding-left: 0.8rem;
+}
+.aside-nav{
+	color: #00003F;
+	font-size: 1rem;
+	margin-top: 1.5rem
+}
+.resource-container{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	flex: 1;
+	position: relative;
+	padding-bottom: 6.8rem;
+}
+.resource-item1{
+	position: relative;
+	width: 12.3rem;
+	height: 12.3rem;
+	color: white;
+}
+.resource-item1:hover .resource-mask{
+	display: block;
+}
+.resource-mask1{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: -1;
+	background-color: rgba(0,0,0,0.4);
+	text-align: center;
+	line-height: 1;
+	display: none;
+}
+.resource-img1{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: -1;
+}
+.resource-name1{
+	font-size: 1.3rem;
+	margin-top: 4rem;
+}
+.resource-author1{
+	font-size: 1rem;
+	transform: scale(0.6);
+	margin-top: 0.5rem;
+}
+
+.resource-time1,.resource-type1{
+	font-size: 1rem;
+	transform: scale(0.5);
+}
+.resource-time1{
+	margin-top: 2rem;
+}
+.resource-type1{
+	margin-top: 0.5rem;
+}
+.load-more{
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translate(-50%,0);
+	text-align: center;
+	border: #00003F 0.2rem solid;
+	height: 2.4rem;
+	line-height: 2rem;
+	color: #00003F;
+	cursor: pointer;
+	font-size: 1.1rem;
+	padding: 0 1rem;
+	margin: auto;
 }
 </style>
