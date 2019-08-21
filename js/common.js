@@ -1,56 +1,38 @@
 var globalUrl = "http://192.168.8.204:8001";
+var isLogin = false;//登录状态
 //处理
 $(document).ready(function(){
 	console.log($(".sendCode"));
-	//处理头部导航栏登录状态和样式切换
-	let isLogin = false;
+	$.cookie('isLogin', false);
+	
+	//检测cookie是否登录
+	isLogin = $.cookie('isLogin');
+	
 	let user_data = {
 		face: "https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=2136300761,4118574064&fm=85&s=3E63EA164415B43B5093166A03005069",
 		name: "user",
 	}
-	$(".resource-item-overview").click(function(){
-		$(".allview").hide();
-		$(".overview").show();
-	})
-	$(".resource-item-checkAll").click(function(){
-		$(".allview").show();
-		$(".overview").hide();
-	})
-	//样式切换
-	$(".header-cancel").hide();
-	$(".header-center").hide();
-	$(".header-cancel").click(function(){
-		$(".header-active").attr("class","header");
-		$(".header-item").toggle();
-		$(".header-cancel").toggle();
-		$(".header-center").fadeOut(500);
-	})
-	$(".header-item").click(function(){
-		$(".header").attr("class","header-active");
-		$(".header-cancel").toggle();
-		$(".header-item").toggle();
-		$(".header-center").fadeIn(500);
-	})
-	
-	//登录样式
-	if(isLogin){
-		console.log("logined")
-		$(".header-face").show();
-	}else{
-		console.log("onLogin")
-		$(".header-face").hide();
-	}
+	//处理头部方法导航栏，初始化
+	headerInit();
+	//登录注销后样式改动
+	stateChange();
 	//绑定登录事件
-	$(".button-login").click(function(){
+	$(".phone-login").click(function(){
 		login();
 	})
 	//绑定注册事件
-	$(".register").click(function(){
+	$(".phone-register").click(function(){
 		register();
 	})
 	//绑定发送验证码事件
 	$(".sendCode").click(function(){
 		sendCode();
+	})
+	$(".sendCodeReset").click(function(){
+		sendCode("reset");
+	})
+	$(".phone-resetPassword").click(function(){
+		resetPassword();
 	})
 })
 //基础类
@@ -83,7 +65,7 @@ function toast(mess){
 //逻辑类
 //登录
 function login(){
-	let data = {
+	let data = {//保存到datajson
 		phonenumber: $("input[name='tel']").val(),
 		password: $("input[name='password']").val(),
 	}
@@ -101,7 +83,7 @@ function login(){
 			return false; 
 		}
 	}
-	ajax("GET",globalUrl+"/login/a/",data).then(res=>{
+	ajax("GET",globalUrl+"/login/a/",data).then(res=>{//先验证手机号码是老师还是学生
 		let url ='';
 		if(res.code == 200){
 			if(res.data[0].boolteacher==0){//0是学生手机号码
@@ -110,20 +92,44 @@ function login(){
 				url = globalUrl+"/login/tlogin/"
 			}
 			if(url!=''){
-				ajax("POST",url,data).then(res=>{
-					if(res.slogin){
-						
-					}else{
-						
+				ajax("POST",url,data).then(res=>{//验证账号密码
+					if(res.slogin!="null" || res.tlogin!="null"){//登录成功
+						if(res.student_name){//将用户信息保存到cookie里面
+							$.cookie('user_id', res.slogin);
+							$.cookie('user_name', res.student_name);
+							$.cookie('user_cellnumber', res.student_cellnumber);
+							$.cookie('user_privilege', "student");
+							$.cookie('isLogin',true);
+						}else if(res.teacher_name){
+							$.cookie('user_id', res.tlogin);
+							$.cookie('user_name', res.teacher_name);
+							$.cookie('user_cellnumber', res.teacher_cellnumber);
+							$.cookie('user_privilege', "teacher");
+							$.cookie('isLogin',true);
+						}else{
+							toast("登录用户错误");
+						}
+						//跳转到首页面
+						toast("登录成功，页面跳转中...");
+						setTimeout("javascript:location.href='../index.html'", 1000);
+					}else{//登录失败
+						toast("账号或密码错误");
 					}
-					console.log(res);
 				})
 			}
 		}
 	})
 }
-//注册接口
-function register(){//注册
+//注销
+function logOut(){
+	$.cookie('user_id', null);
+	$.cookie('user_name', null);
+	$.cookie('user_cellnumber', null);
+	$.cookie('user_privilege', null);
+	$.cookie('isLogin',false);
+}
+//注册
+function register(){
 	let data = {
 		phonenumber: $("input[name='tel']").val(),
 		password: $("input[name='password']").val(),
@@ -165,7 +171,7 @@ function register(){//注册
 		}
 	})
 }
-function changeState(){//改变按钮状态
+function buttonState(){//改变按钮状态
 	let count = 60;
 	$('.sendCode').addClass("sendCode-active");
 	const countDown = setInterval(() => {
@@ -180,7 +186,7 @@ function changeState(){//改变按钮状态
 		count--;
 	}, 1000);
 }
-function sendCode(){//学生,教师发送手机验证短信
+function sendCode(type){//学生,教师发送手机验证短信
 	let data = {
 		cellphone: $("input[name='tel']").val(),
 		phonenumber: $("input[name='tel']").val()
@@ -191,13 +197,19 @@ function sendCode(){//学生,教师发送手机验证短信
 		toast("请输入有效的手机号码");
 		return false; 
 	}
-	ajax("GET",globalUrl+"/login/a/",data).then(res=>{
+	ajax("GET",globalUrl+"/login/a/",{phonenumber: $("input[name='tel']").val()}).then(res=>{
 		let url ='';
 		if(res.code == 200){
 			if(res.data[0].boolteacher==0){//0是学生手机号码
 				url = globalUrl+"/login/sregistersendsms/"
+				if(type=="reset"){//找回密码
+					url = globalUrl+"/login/schangepassendsms/"
+				}
 			}else if(res.data[0].boolteacher==1){//1是老师手机号码
 				url = globalUrl+"/login/tregistersendsms/"
+				if(type=="reset"){//找回密码
+					url = globalUrl+"/login/tchangepassendsms/"
+				}
 			}
 			if(url!=''){
 				ajax("POST",url,data).then(res=>{
@@ -206,5 +218,99 @@ function sendCode(){//学生,教师发送手机验证短信
 			}
 		}
 	})
-	changeState();
+	buttonState();
+}
+//登录注销后页面的样式改变
+function stateChange(){
+	if(isLogin){
+		console.log("logined")
+		$(".toLogin").hide();
+		$(".header-face").show();
+	}else{
+		console.log("noLogin");
+		$(".toLogin").show();
+		$(".header-face").hide();
+	}
+}
+//处理头部导航栏登录状态和样式切换
+function headerInit(){
+	$(".resource-item-overview").click(function(){
+		$(".allview").hide();
+		$(".overview").show();
+	})
+	$(".resource-item-checkAll").click(function(){
+		$(".allview").show();
+		$(".overview").hide();
+	})
+	//样式切换
+	$(".header-cancel").hide();
+	$(".header-center").hide();
+	$(".header-cancel").click(function(){
+		$(".header-active").attr("class","header");
+		$(".header-item").toggle();
+		$(".header-cancel").toggle();
+		$(".header-center").fadeOut(500);
+	})
+	$(".header-item").click(function(){
+		$(".header").attr("class","header-active");
+		$(".header-cancel").toggle();
+		$(".header-item").toggle();
+		$(".header-center").fadeIn(500);
+	})
+}
+//找回密码
+function resetPassword(){
+	let data = {
+		phonenumber: $("input[name='tel']").val(),
+		newpassword: $("input[name='password']").val(),
+		passwordR: $("input[name='passwordR']").val(),
+		verificationcode: $("input[name='code']").val()
+	}
+	let check = true;
+	if(check){
+		//输入不为空
+		if(data.phonenumber =='' || data.newpassword =='' || data.passwordR =='' || data.verificationCode =='' ){
+			toast("输入不为空");
+			return false;
+		}
+		//密码重复
+		if(data.newpassword!=data.passwordR){
+			toast("重复密码不一致");
+			return false;
+		}
+		//手机验证
+		let myreg = /^(((13[0-9]{1})|(14[0-9]{1})|(15[0-9]{1})|17[0-9]{1}|(18[0-9]{1}))+\d{8})$/; 
+		if(!myreg.test($("input[name='tel']").val())){ 
+			toast("请输入有效的手机号码");
+			return false; 
+		}
+	}
+	data = {
+		phonenumber: $("input[name='tel']").val(),
+		newpassword: $("input[name='password']").val(),
+		verificationcode: $("input[name='code']").val()
+	}
+	console.log(data);
+	ajax("GET",globalUrl+"/login/a/",{phonenumber: $("input[name='tel']").val()}).then(res=>{
+		let url ='';
+		if(res.code == 200){
+			if(res.data[0].boolteacher==0){//0是学生手机号码
+				url = globalUrl+"/login/schangepas/"
+			}else if(res.data[0].boolteacher==1){//1是老师手机号码
+				url = globalUrl+"/login/tchangepas/"
+			}
+			if(url!=''){
+				console.log(data);
+				ajax("POST",url,data).then(res=>{
+					console.log(res);
+					if(res.schange==0||res.tchange==0){
+						toast("修改成功,正在跳转到登录页面...");
+						setTimeout("javascript:location.href='../login.html'", 1000);
+					}else{
+						toast(res.result)
+					}
+				})
+			}
+		}
+	})
 }
