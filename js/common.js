@@ -1,17 +1,10 @@
 var globalUrl = "http://192.168.8.204:8001";
-var isLogin = false;//登录状态
+var isLogin = "false";//登录状态
 //处理
+
 $(document).ready(function(){
-	console.log($(".sendCode"));
-	$.cookie('isLogin', false);
-	
-	//检测cookie是否登录
-	isLogin = $.cookie('isLogin');
-	
-	let user_data = {
-		face: "https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=2136300761,4118574064&fm=85&s=3E63EA164415B43B5093166A03005069",
-		name: "user",
-	}
+	//检测sessionStorage是否登录
+	isLogin = sessionStorage.getItem("isLogin");
 	//处理头部方法导航栏，初始化
 	headerInit();
 	//登录注销后样式改动
@@ -34,6 +27,32 @@ $(document).ready(function(){
 	$(".phone-resetPassword").click(function(){
 		resetPassword();
 	})
+
+	//swiper 初始化
+	if($(".swiper-container").length>=1){
+		var swiper = new Swiper('.swiper-container', {
+			scrollbar: {
+			el: '.swiper-scrollbar',
+			hide: false,
+			},
+			navigation: {
+				nextEl: '.notice-right',
+				prevEl: '.notice-left',
+			},
+		});
+	}
+
+	//分配item
+	if($(".notice-item").length>=1){
+		let items =  $(".notice-item");
+		console.log($(".notice-item").length);
+		console.log($(".news-slide").length);
+		for(let i = 0;i< items.length ;i++){
+			let j = Math.floor(i/4);
+			console.log(j);
+			$(".news-slide")[j].append(items[i]);
+		}
+	}
 })
 //基础类
 //jq ajax 封装
@@ -83,7 +102,7 @@ function login(){
 			return false; 
 		}
 	}
-	ajax("GET",globalUrl+"/login/a/",data).then(res=>{//先验证手机号码是老师还是学生
+	ajax("GET",globalUrl+"/login/a/",{phonenumber: $("input[name='tel']").val()}).then(res=>{//先验证手机号码是老师还是学生
 		let url ='';
 		if(res.code == 200){
 			if(res.data[0].boolteacher==0){//0是学生手机号码
@@ -95,17 +114,17 @@ function login(){
 				ajax("POST",url,data).then(res=>{//验证账号密码
 					if(res.slogin!="null" || res.tlogin!="null"){//登录成功
 						if(res.student_name){//将用户信息保存到cookie里面
-							$.cookie('user_id', res.slogin);
-							$.cookie('user_name', res.student_name);
-							$.cookie('user_cellnumber', res.student_cellnumber);
-							$.cookie('user_privilege', "student");
-							$.cookie('isLogin',true);
+							sessionStorage.setItem("user_id", res.slogin);
+							sessionStorage.setItem("user_name", res.student_name);
+							sessionStorage.setItem("user_cellnumber", res.student_cellnumber);
+							sessionStorage.setItem("user_privilege", "student");
+							sessionStorage.setItem("isLogin","true");
 						}else if(res.teacher_name){
-							$.cookie('user_id', res.tlogin);
-							$.cookie('user_name', res.teacher_name);
-							$.cookie('user_cellnumber', res.teacher_cellnumber);
-							$.cookie('user_privilege', "teacher");
-							$.cookie('isLogin',true);
+							sessionStorage.setItem('user_id', res.tlogin);
+							sessionStorage.setItem('user_name', res.teacher_name);
+							sessionStorage.setItem('user_cellnumber', res.teacher_cellnumber);
+							sessionStorage.setItem('user_privilege', "teacher");
+							sessionStorage.setItem('isLogin',"true");
 						}else{
 							toast("登录用户错误");
 						}
@@ -122,11 +141,12 @@ function login(){
 }
 //注销
 function logOut(){
-	$.cookie('user_id', null);
-	$.cookie('user_name', null);
-	$.cookie('user_cellnumber', null);
-	$.cookie('user_privilege', null);
-	$.cookie('isLogin',false);
+	sessionStorage.removeItem('user_id');
+	sessionStorage.removeItem('user_name');
+	sessionStorage.removeItem('user_cellnumber');
+	sessionStorage.removeItem('user_privilege');
+	sessionStorage.removeItem('isLogin');
+	stateChange();
 }
 //注册
 function register(){
@@ -222,7 +242,7 @@ function sendCode(type){//学生,教师发送手机验证短信
 }
 //登录注销后页面的样式改变
 function stateChange(){
-	if(isLogin){
+	if(isLogin=="true"){
 		console.log("logined")
 		$(".toLogin").hide();
 		$(".header-face").show();

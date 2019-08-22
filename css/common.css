@@ -54,6 +54,9 @@ button{
 .flex-justify{
 	justify-content: space-between;
 }
+.justify-center{
+	justify-content: center;
+}
 .flex-full{
 	flex: 1;
 }
@@ -189,6 +192,32 @@ container{
 .toLogin{
 	font-size: 1.2rem;
 	color: white;
+}
+.user-info-box{
+	position: absolute;
+	right: 15rem;
+	bottom: 0;
+	transform: translate(0,100%);
+	background-color: white;
+	width: 16rem;
+	height: 13rem;
+}
+.user-face{
+	height: 3.7rem;
+	width: 3.7rem;
+	margin: 0.7rem;
+}
+.user-name{
+	color: #1B1464;
+	font-size: 1rem;
+	font-weight: 600;
+}
+.user-email{
+	color: #898989;
+	font-size: 1rem;
+}
+.personalPage{
+	border-top: 1px solid #BFBFBF;
 }
 /* index.html */
 .header-left,.header-center,.header-right,.change-language{

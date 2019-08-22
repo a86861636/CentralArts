@@ -7,6 +7,9 @@
 <script type="text/javascript" src="./js/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="./js/jquery.cookie.js"></script>
 <script type="text/javascript" src="./js/common.js"></script>
+<script src="./js/swiper.js"></script>
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="./css/swiper.css">
 <title>中央美院首页</title>  
 </head>
 <style>
@@ -137,6 +140,7 @@ body{
 	flex: 1;
 	display: flex;
 	justify-content: space-between;
+	overflow: hidden;
 }
 .notice-item{
 	width: 12.5rem;
@@ -161,7 +165,7 @@ body{
 	height: 3.4rem;
 	border: #0332E0 0.2rem solid;
 	font-size: 1.3rem;
-	border: #0332E0
+	border: #0332E0;
 	margin-left: 0.5rem;
 	background-color: #F2F2F2;
 	position: relative;
@@ -409,6 +413,11 @@ body{
 	display: flex;
 	flex-direction: column;
 }
+.swiper-slide{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
 </style>
 <body>  
 <!-- 头部导航栏 -->
@@ -426,6 +435,20 @@ body{
 		<a class="header-nav-active">{%trans "开始实验" %}</a>
 	</div>
 	<div class="header-right align-center">
+		<div class="user-info-box">
+			<div class="flex-row">
+				<img src="./img/face.png" class="user-face">
+				<div class="flex-col justify-center">
+					<div class="user-name">user.name</div>
+					<div class="user-email">user.email</div>
+				</div>
+			</div>
+			<div class="personalPage">个人主页</div>
+			<div><span>通知</span><span class="">2</span></div>
+			<div class="uploadHistory">上传记录</div>
+			<div class="accountSet">账号设置</div>
+			<div class="button-logOut">注销</div>
+		</div>
 		<img class="header-search" src="img/search.png"></img>
 		<img class="header-face" src="img/face.png"></img>
 		<a href="html/login.html" class="toLogin">{%trans "登录" %}</a>
@@ -444,32 +467,14 @@ body{
 			<div class="notice-tt">{%trans "公告" %}</div>
 			<div class="notice-delete">—</div>
 			<img src="./img/left.png" class="notice-left"></img>
-			<div class="notice-item-box">
-				<div class="notice-item">
-					<div class="notice-icon-active">{%trans "通告" %}</div>
-					<div class="notice-ct-active">
-						<div class="notice-ct-tt">{%trans "美术博物馆虚拟策展实验室" %}</div>
-						<div class="notice-time">{%trans "2019年8月9日" %}</div>
+			<div class="notice-item-box swiper-container">
+				<div class="swiper-wrapper">
+					<div style="display: none">
+						
 					</div>
-				</div><div class="notice-item">
-					<div class="notice-icon">{%trans "新闻" %}</div>
-					<div class="notice-ct">
-						<div class="notice-ct-tt">{%trans "美术博物馆虚拟策展实验室" %}</div>
-						<div class="notice-time">{%trans "2019年8月9日" %}</div>
-					</div>
-				</div><div class="notice-item">
-					<div class="notice-icon">{%trans "快讯" %}</div>
-					<div class="notice-ct">
-						<div class="notice-ct-tt">{%trans "美术博物馆虚拟策展实验室" %}</div>
-						<div class="notice-time">{%trans "2019年8月9日" %}</div>
-					</div>
-				</div>
-				<div class="notice-item">
-					<div class="notice-icon">{%trans "新闻" %}</div>
-					<div class="notice-ct">
-						<div class="notice-ct-tt">{%trans "美术博美术博物馆虚拟美术博物馆虚拟物馆虚拟策展实验室" %}</div>
-						<div class="notice-time">{%trans "2019年8月9日" %}</div>
-					</div>
+					<div class="swiper-slide news-slide"></div>
+					<div class="swiper-slide news-slide"></div>
+					<div class="swiper-slide news-slide"></div>
 				</div>
 			</div>
 			<img src="./img/right.png" class="notice-right"></img>

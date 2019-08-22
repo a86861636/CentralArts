@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<link href="../css/common.css" rel="stylesheet" type="text/css" /> 
+<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+  <!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="../css/swiper.css">
+</head>
+<style>
+.news-tt{
+	height: 12rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	font-size: 2.8rem;
+	background: -moz-linear-gradient(left, rgb(0,255,255), rgb(3,50,224), rgb(255,125,218));
+	background: -webkit-linear-gradient(left, rgb(0,255,255), rgb(3,50,224), rgb(255,125,218));
+	background: -o-linear-gradient(left, rgb(0,255,255), rgb(3,50,224), rgb(255,125,218));
+	padding-top: 4rem;
+	font-weight: 600;
+}
+container{
+	width: 74rem;
+	margin: 2.1rem auto 0 auto;
+}
+.content-img-box{
+	display: flex;
+	flex-direction: column;
+}
+.news-box{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.news-right,.news-left{
+	width: 48%;
+}
+.news-item-box{
+	border:1px solid rgba(0,0,63,1);
+	padding: 0.9rem 0;
+}
+.news-tt1{
+	color: #00003F;
+	font-size: 1.9rem;
+	margin-bottom: 2.2rem;
+	font-weight: 600;
+}
+.news-content{
+	display: flex;
+	flex-direction: row;
+}
+.content-img-box{
+	width: 40%;
+	margin-right: 5%;
+}
+.content-text{
+	flex: 1;
+}
+
+.news-tt2{
+	color: #00003F;
+	font-size: 1rem;
+	font-weight: 600;
+	padding: 0 1.4rem;
+}
+.news-type,.news-time{
+	color: #00003F;
+	font-size: 1rem;
+	margin: 0.8rem 0;
+	padding: 0 1.4rem;
+}
+.news-content{
+	padding: 1.2rem 0;
+	border-top: 1px #F0F0F0 solid;
+	border-bottom: 1px #F0F0F0 solid;
+	padding: 1.9rem 1.4rem;
+}
+.content-img{
+	width: 100%;
+}
+.news-show,.news-up{
+	width: 1.2rem;
+	height: 0.6rem;
+	display: block;
+	margin: 1.3rem auto 0 auto;
+	cursor: pointer;
+}
+</style>
+<body>
+<!-- 头部导航栏 -->
+<header class="header">
+	<div class="header-left align-center">
+		<img class="header-icon align-center" src="../img/logo.png"></img>
+		<div class="change-language">
+			<div class="language language-active">中</div><div class="language">EN</div>
+		</div>
+	</div>
+	<div class="header-center align-center">
+		<a href="case.html" class="header-nav"><!-- {%trans " -->策展案例<!-- " %} --></a>
+		<a href="resource.html"  class="header-nav"><!-- {%trans " -->策展资源<!-- " %} --></a>
+		<a href="aboutUs.html"class="header-nav"><!-- {%trans " -->关于我们<!-- " %} --></a>
+		<a class="header-nav-active"><!-- {%trans " -->开始实验<!-- " %} --></a>
+	</div>
+	<div class="header-right align-center">
+		<img class="header-search" src="../img/search.png"></img>
+		<img class="header-face" src="../img/face.png"></img>
+		<a href="login.html" class="toLogin"><!-- {%trans " -->登录<!-- " %} --></a>
+		<img class="header-cancel" src="../img/cancel.png"></img>
+		<img src="../img/item.png" class="header-item"></img>
+	</div>
+</header>
+<div class="news-tt"><span>新闻公告</span></div>
+<container>
+	<div class="news-box">
+		<div class="news-left">
+			<div class="news-tt1">新闻</div>
+			<div class="news-item-box">
+				<div class="news-item">
+					<div class="news-tt2">美术博物馆虚拟策展实验室助推美术鉴赏课程革新</div>
+					<div class="flex-row flex-justify">
+						<div class="news-type">国培快讯</div>
+						<div class="news-time">2019年8月9日</div>
+					</div>
+					<div class="news-content">
+						<div class="content-img-box">
+							<img src="../img/face.png" class="content-img">
+							<img src="../img/face.png" class="content-img">
+						</div>
+						<div class="content-text">
+							9月26日上午，在中央美术学院第八届国培课
+							堂上中央美术学院艺术管理与教育学院院长余丁教
+							授以“美术鉴赏课的目标，方法与革新”为主题，
+							向来自全国的300位美术骨干教师及教研员带来了
+							精彩讲座，并推出了中央美术学院美术博物馆虚拟
+							策展实验室的“美术鉴赏在线课程”，引起国培学
+							员们的强烈反响。
+						</div>
+					</div>
+					<img src="../img/down.png" class="news-show">
+				</div>
+			</div>
+		</div>
+		<div class="news-right">
+			<div class="news-tt1">公告</div>
+		</div>
+	</div>
+</container>
+<footer>
+	<div class="footer-copyright">{%trans "版权所有 2007-2019 中央美术学院 Copyright © 2007-2019 CAFA. All Rights Reserved." %}</div>
+</footer>
+</body>
+</html>
