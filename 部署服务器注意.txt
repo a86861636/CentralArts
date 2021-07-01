@@ -1,0 +1,2 @@
+部署到服务器，html文件里的外链‘/static/index/’
+本地测试，html文件里的外链‘./static/index/’
